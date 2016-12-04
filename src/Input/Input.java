@@ -1,6 +1,7 @@
 package Input;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -8,46 +9,65 @@ import java.io.InputStreamReader;
  */
 public class Input {
     
-    private static final InputStreamReader input = new InputStreamReader(System.in);
-    private static final BufferedReader tastiera = new BufferedReader(input);
-    
     public static String readString(){
-        try{
-            return tastiera.readLine();
+        String ret = null;
+        
+        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
+            
+            ret = keyboard.readLine();
+            
+        } catch (IOException ex) {
+            System.err.println("Errore nella lettura da tastiera");
         }
-        catch(Exception e){  
-            System.out.println("Error");
-            return "Error";
-        }
+        
+        return ret;
     }
     
     public static int readInt(){
-        try{
-            return Integer.valueOf(tastiera.readLine());
+        int ret = 0;
+        
+        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
+            
+            ret = Integer.parseInt(keyboard.readLine());
+            
+        } catch (NumberFormatException nfe){
+            System.err.println("Errore nel formato del numero");
+        } catch (IOException ex) {
+            System.err.println("Errore nella lettura da tastiera");
         }
-        catch(Exception e){  
-            System.out.println("Error");
-            return 0;
-        }
+        
+        return ret;
     }
     
     public static float readFloat(){
-        try{
-            return Float.valueOf(tastiera.readLine());
+        float ret = 0;
+        
+        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
+            
+            ret = Float.parseFloat(keyboard.readLine());
+            
+        } catch (NumberFormatException nfe){
+            System.err.println("Errore nel formato del numero");
+        } catch (IOException ex) {
+            System.err.println("Errore nella lettura da tastiera");
         }
-        catch(Exception e){  
-            System.out.println("Error");
-            return 0;
-        }
+        
+        return ret;
     }
     
     public static double readDouble(){
-        try{
-            return Double.valueOf(tastiera.readLine());
+        double ret = 0;
+        
+        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
+            
+            ret = Double.parseDouble(keyboard.readLine());
+            
+        } catch (NumberFormatException nfe){
+            System.err.println("Errore nel formato del numero");
+        } catch (IOException ex) {
+            System.err.println("Errore nella lettura da tastiera");
         }
-        catch(Exception e){  
-            System.out.println("Error");
-            return 0;
-        }
+        
+        return ret;
     }
 }
