@@ -1,4 +1,4 @@
-package Input;
+package datastreams;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,11 +9,11 @@ import java.io.InputStreamReader;
  */
 public class Input {
     
-    public static String readString(){
+    public static String readString() {
         String ret = null;
         
-        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
-            
+        try{
+            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
             ret = keyboard.readLine();
             
         } catch (IOException ex) {
@@ -26,8 +26,8 @@ public class Input {
     public static int readInt(){
         int ret = 0;
         
-        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
-            
+        try{
+            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
             ret = Integer.parseInt(keyboard.readLine());
             
         } catch (NumberFormatException nfe){
@@ -42,8 +42,8 @@ public class Input {
     public static float readFloat(){
         float ret = 0;
         
-        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
-            
+        try{
+            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
             ret = Float.parseFloat(keyboard.readLine());
             
         } catch (NumberFormatException nfe){
@@ -58,8 +58,8 @@ public class Input {
     public static double readDouble(){
         double ret = 0;
         
-        try(BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in))){
-            
+        try{
+            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
             ret = Double.parseDouble(keyboard.readLine());
             
         } catch (NumberFormatException nfe){
